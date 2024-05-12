@@ -1,0 +1,9 @@
+{
+    "extends": ["@bravo68web/eslint-config"],
+    "ignorePatterns": ["node_modules", "dist"],
+    "rules": {
+        "unicorn/filename-case": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "regexp/strict": "off"
+    }
+}

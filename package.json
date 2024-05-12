@@ -1,0 +1,76 @@
+{
+	"name": "@bravo68web/utils",
+	"version": "0.1.0",
+	"description": "Bravo68web's Common utils library",
+	"packageManager": "pnpm@8.15.3",
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"keywords": [],
+	"publishConfig": {
+		"access": "public"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*",
+				"./dist/index.d.ts"
+			]
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"author": {
+    "email": "hi@b68.dev",
+    "name": "Bravo68web",
+    "url": "https://b68.dev"
+  },
+	"license": "ISC",
+	"scripts": {
+		"build": "pkgroll",
+		"lint": "pnpm lint:eslint && pnpm lint:prettier",
+		"lint:eslint": "eslint .",
+		"lint:prettier": "prettier . --check",
+		"lint:fix": "eslint . --fix && prettier . --write",
+		"prepublishOnly": "pnpm run build",
+		"release": "bumpp --commit --push --tag && pnpm publish",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit",
+		"watch": "pkgroll -w"
+	},
+	"devDependencies": {
+		"@bravo68web/eslint-config": "^1.2.4",
+		"@bravo68web/prettier-config": "^1.2.4",
+		"@bravo68web/tsconfig": "^1.2.4",
+		"@types/node": "^20.12.11",
+		"@types/throttle-debounce": "^5.0.2",
+		"eslint": "^8.55.0",
+		"pkgroll": "^2.0.2",
+		"prettier": "^3.2.5",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.11",
+		"vitest": "^1.6.0"
+	},
+	"dependencies": {
+		"auto-bind": "^5.0.1",
+		"defaults": "^3.0.0",
+		"escape-goat": "^4.0.0",
+		"figures": "^6.1.0",
+		"picocolors": "^1.0.0",
+		"throttle-debounce": "^5.0.0",
+		"ts-essentials": "^10.0.0"
+	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BRAVO68WEB/utils.git"
+  }
+}
